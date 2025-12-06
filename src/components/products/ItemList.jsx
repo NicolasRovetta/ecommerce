@@ -1,6 +1,6 @@
 import Item from "./Item";
 import { useState } from "react";
-import filterIcon from "../../assets/filter.png";
+import { FaFilter } from "react-icons/fa";
 import "./ItemList.css";
 
 function ItemList({ items }) {
@@ -18,7 +18,7 @@ function ItemList({ items }) {
       <div className="filter-container">
         {!showFilters && (
           <button className="filterIconButton" onClick={() => setShowFilters(true)} aria-label="Mostrar filtros">
-            <img src={filterIcon} className="filterIcon" alt="Filter" />
+            <FaFilter className="filterIcon" />
           </button>
         )}
       </div>
