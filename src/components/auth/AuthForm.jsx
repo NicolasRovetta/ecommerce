@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./AuthForm.css";
-import { registrarYGuardarUsuario, iniciarSesion } from "../data/userCredentials.js";
+import { registrarYGuardarUsuario, iniciarSesion } from "../../data/userCredentials.js";
 
 function AuthForm({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -71,9 +71,9 @@ function AuthForm({ onLogin }) {
       <button type="submit" aria-label={isRegistering ? "Registrar" : "Login"}>
         {isRegistering ? "Registrar" : "Login"}
       </button>
-      <button 
-        type="button" 
-        onClick={() => setIsRegistering(!isRegistering)} 
+      <button
+        type="button"
+        onClick={() => setIsRegistering(!isRegistering)}
         aria-label={isRegistering ? "¿Ya tienes una cuenta? Inicia sesión" : "¿No tienes una cuenta? Regístrate"}
       >
         {isRegistering ? "¿Ya tienes una cuenta? Inicia sesión" : "¿No tienes una cuenta? Regístrate"}

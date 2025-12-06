@@ -1,0 +1,107 @@
+/* Detail Container */
+.backgroundDetalleProducto {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 2rem 4rem 2rem;
+}
+
+.detalleProducto {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.detalleProducto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.detalleProducto p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.detalleProducto h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+/* Image */
+.containerimg {
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.imgProductDetalles {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s ease;
+}
+
+.imgProductDetalles:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* Controls */
+.agregarcart {
+  background: var(--gradient-accent);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: var(--radius-full);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.agregarcart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+.loadingScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .detalleProducto {
+    padding: 2rem 1.5rem;
+  }
+
+  .detalleProducto h2 {
+    font-size: 2rem;
+  }
+
+  .imgProductDetalles {
+    max-height: 300px;
+  }
+}

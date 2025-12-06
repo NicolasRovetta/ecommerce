@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { sendCart } from "./DetalleProducto";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import Contador from "./Contador"; 
+import Contador from "./Contador";
 
 function Item({ categoria, modelo, precio, id, image, descripcion }) {
   const producto = { categoria, modelo, precio, id, image };
@@ -30,7 +30,7 @@ function Item({ categoria, modelo, precio, id, image, descripcion }) {
         <div>
           <h3>{modelo}</h3>
         </div>
-        <img className="imgProduct" src={image} alt="imagen del producto" />
+        <img className="imgProduct" src={image} alt="imagen del producto" loading="lazy" />
         <div>
           <strong>Precio: ${precio}</strong>
         </div>

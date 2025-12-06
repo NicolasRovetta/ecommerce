@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import Error from "./Error";
+import Error from "../layout/Error";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
@@ -22,7 +22,7 @@ export const sendCart = (producto, cantidad) => {
 export const counter = (initialValue = 0) => {
   let count = initialValue;
   return {
-    increment: () => count < 5 && count++ && {cantidad}==0,
+    increment: () => count < 5 && count++ && { cantidad } == 0,
     decrement: () => count > 0 && count--,
     getCount: () => count,
   };

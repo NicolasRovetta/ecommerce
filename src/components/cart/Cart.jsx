@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import Swal from "sweetalert2"; 
+import Swal from "sweetalert2";
 
-import "./cart.css";
-import { addProductCart } from "./DetalleProducto";
-import Checkout from "./Checkout";
-import axios from "axios"; 
+import "./Cart.css";
+import { addProductCart } from "../products/DetalleProducto";
+
+import axios from "axios";
 
 function Cart() {
 
@@ -74,7 +74,7 @@ function Cart() {
   };
 
   return (
-    <div className="containerCart app">
+    <div className="containerCart">
       <div className="cart">
         {cartItems.length === 0 ? <h2>Carrito vacío</h2> : <h2>Carrito</h2>}
         <div className="cart-header">
@@ -91,11 +91,13 @@ function Cart() {
             <li key={item.id} className="cart-item">
               <img className="imgProduct" src={item.image} alt="imagen del producto" />
               <div className="item-details">
-                <div>{item.categoria}</div>
-                <h3>{item.modelo}</h3>
-                <div><strong>Precio: ${item.precio}</strong></div>
-                <div><strong>Cantidad: {item.count}</strong></div>
-                <div><strong>Sub total: ${item.precio * item.count}</strong></div>
+                <div>
+                  <span className="category">{item.categoria}</span>
+                  <h3>{item.modelo}</h3>
+                </div>
+                <div>Precio: <strong>${item.precio}</strong></div>
+                <div>Cant: <strong>{item.count}</strong></div>
+                <div>Subtotal: <strong>${item.precio * item.count}</strong></div>
               </div>
             </li>
           ))}
@@ -116,7 +118,9 @@ function Cart() {
             <label>Teléfono:</label>
             <input type="tel" name="telefono" required placeholder="Ej: 1122334455" />
           </div>
-          <Checkout cartItems={cartItems} />
+          <button type="submit" className="buy" aria-label="Realizar pago">
+            Realizar pago
+          </button>
         </form>
       </div>
     </div>

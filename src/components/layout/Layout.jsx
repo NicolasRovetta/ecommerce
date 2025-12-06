@@ -1,12 +1,12 @@
 import "./Layout.css";
-import LogoW from "../assets/logoEcommerce.png";
-import CartWidget from "./CartWidget";
+import LogoW from "../../assets/logoEcommerce.png";
+import CartWidget from "../cart/CartWidget";
 import { Link, Outlet } from "react-router-dom";
 import React, { useState } from 'react';
-import logoWp from "../assets/logoWp.png";
+import logoWp from "../../assets/logoWp.png";
 
 import { FaSun, FaMoon } from "react-icons/fa";
-import AuthForm from "./AuthForm";
+import AuthForm from "../auth/AuthForm";
 
 function Layout({ isAuthenticated, handleLogin }) {
   const [menuActive, setMenuActive] = useState(false);
@@ -29,7 +29,7 @@ function Layout({ isAuthenticated, handleLogin }) {
           <AuthForm onLogin={handleLogin} />
         </>
       )}
-      <nav className="layout app">
+      <nav className="layout">
         <div className="hamburger-menu" onClick={toggleMenu}>
           <div></div>
           <div></div>
@@ -38,7 +38,7 @@ function Layout({ isAuthenticated, handleLogin }) {
         <ul className={menuActive ? 'active' : ''}>
           <li>
             <div className="logo">
-              <img src={LogoW} alt="Logo"/>
+              <img src={LogoW} alt="Logo" />
             </div>
           </li>
           {menuItems.map(({ to, label, text }) => (

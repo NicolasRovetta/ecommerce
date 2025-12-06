@@ -1,6 +1,6 @@
-import cart from '../assets/cartWidget.png';
+import cart from '../../assets/cartWidget.png';
 import { useState, useEffect } from 'react';
-import { addProductCart } from './DetalleProducto';
+import { addProductCart } from '../products/DetalleProducto';
 import './CartWidget.css';
 
 function CartWidget() {
@@ -17,7 +17,7 @@ function CartWidget() {
   return (
     <>
       <div className="cartPosition">
-        <img src={cart} alt="logoCart" className='logoCart'/>
+        <img src={cart} alt="logoCart" className='logoCart' />
         <div>Carrito ({cartCount})</div>
       </div>
     </>
